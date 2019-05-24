@@ -4,7 +4,9 @@
   "description": "A command line tool to download comics from read-comic.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel scripts -d dist",
+    "start": "npm run build && node ./dist/index"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,19 @@
   },
   "homepage": "https://github.com/Oluwa-nifemi/Read-Comics-Downloader#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "cheerio": "^1.0.0-rc.3",
+    "emojic": "^1.1.15",
+    "file-download": "^0.1.2",
     "image-downloader": "^3.4.2",
     "images-to-pdf": "^1.0.3",
     "inquirer": "^6.3.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   }
 }
